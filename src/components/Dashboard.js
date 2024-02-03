@@ -4,24 +4,24 @@ import { useHistory } from "react-router-dom";
 import NewsItemList from "./NewsItemList";
 
 const Dashboard = ({ token, setIsAuthenticated }) => {
-  const [newsItems, setNewsItems] = useState([]);
+  // const [newsItems, setNewsItems] = useState([]);
   const history = useHistory();
 
-  useEffect(() => {
-    const fetchNewsItems = async () => {
-      try {
-        const res = await axios.get("/api/news", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setNewsItems(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchNewsItems();
-  }, [token]);
+  // useEffect(() => {
+  //   const fetchNewsItems = async () => {
+  //     try {
+  //       const res = await axios.get("/api/news", {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       });
+  //       setNewsItems(res.data);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   };
+  //   fetchNewsItems();
+  // }, [token]);
 
   const handleLogout = async () => {
     try {
@@ -41,7 +41,7 @@ const Dashboard = ({ token, setIsAuthenticated }) => {
     <div>
       <h1>Dashboard</h1>
       <button onClick={handleLogout}>Logout</button>
-      <NewsItemList newsItems={newsItems} />
+      {/* <NewsItemList newsItems={newsItems} /> */}
     </div>
   );
 };
