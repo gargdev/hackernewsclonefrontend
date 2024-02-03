@@ -10,7 +10,7 @@ const Dashboard = ({ token, setIsAuthenticated }) => {
   useEffect(() => {
     const fetchNewsItems = async () => {
       try {
-        const res = await axios.get("https://hackernewsclonebackend.onrender.com/api/news", {
+        const res = await axios.get("/api/news", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
