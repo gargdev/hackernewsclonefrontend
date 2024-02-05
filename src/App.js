@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="App bg-slate-700 p-96">
+      <div className="App bg-slate-700">
         <Switch>
           <Route exact path="/">
             {isAuthenticated ? (

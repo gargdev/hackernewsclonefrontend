@@ -1,0 +1,23 @@
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    gap: 3rem;
+}
+
+span{
+    display: flex;
+    justify-content: space-between;
+    margin-top:2%;
+}
+
+li{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+li a:hover{
+    color: white;
+}
