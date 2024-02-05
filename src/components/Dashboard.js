@@ -25,8 +25,7 @@ const Dashboard = ({ token, setIsAuthenticated }) => {
   return (
     <div className="h-full flex flex-col  justify-center">
       <div className="flex h-[10%] flex-row justify-between items-center">
-        <h1 className="text-gray-900 text-2xl">Dashboard</h1>
-        <h1 className="text-black">News Items</h1>
+        <h1>Dashboard</h1>
         <button
           className="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
           onClick={handleLogout}
@@ -34,7 +33,7 @@ const Dashboard = ({ token, setIsAuthenticated }) => {
           Logout
         </button>
       </div>
-      <div className="p-5 mt-5 h-[70%] overflow-scroll shadow-lg hide-scroll-bar">
+      <div className="p-5 mt-5 h-[90%] overflow-scroll shadow-lg hide-scroll-bar">
         {<NewsItemList />}
       </div>
     </div>
