@@ -8,7 +8,9 @@ const Dashboard = ({ token, setIsAuthenticated }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("https://hackernewsclonebackend.onrender.com/api/auth/logout");
+      await axios.post(
+        "https://hackernewsclonebackend.onrender.com/api/auth/logout"
+      );
       localStorage.removeItem("token");
       setIsAuthenticated(false);
       history.push("/"); // Redirect to the home page
@@ -21,7 +23,7 @@ const Dashboard = ({ token, setIsAuthenticated }) => {
   };
 
   return (
-    <div className="h-full">
+    <div className="h-full flex flex-col  justify-center">
       <div className="flex h-[10%] flex-row justify-between items-center">
         <h1 className="text-gray-900 text-2xl">Dashboard</h1>
         <h1 className="text-black">News Items</h1>

@@ -19,10 +19,13 @@ const Signup = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://hackernewsclonebackend.onrender.com/api/auth/signup", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        "https://hackernewsclonebackend.onrender.com/api/auth/signup",
+        {
+          username,
+          password,
+        }
+      );
       console.log(res.data);
     } catch (err) {
       console.error(err.response.data);
@@ -30,7 +33,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="container bg-white-300 p-10 w-2/6 flex flex-col gap-9 items-center justify-around outline outline-2 outline-offset-2 rounded-lg outline-none">
+    <div className="container bg-white-300 p-10 w-2/6 flex flex-col gap-9 items-center justify-center outline outline-2 outline-offset-2 rounded-lg outline-none">
       <h1 className="text-4xl font-extrabold mb-10">Sign Up</h1>
       <form
         onSubmit={onSubmit}
