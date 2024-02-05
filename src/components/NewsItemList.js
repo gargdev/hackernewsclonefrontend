@@ -59,6 +59,10 @@ function NewsItemList() {
             >
               {item.title}
             </a>
+            <div className="flex gap-2">
+              <div className="">{item.upvotes}  Upvotes</div>
+              <div className="">{item.comments}  Comments</div>
+            </div>
             {!item.deleted && (
               <span>
                 <button
