@@ -9,7 +9,7 @@ function NewsItemList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/news")
+      .get("https://hackernewsclonebackend.onrender.com/api/news")
       .then((response) => {
         setNewsItems(response.data);
       })
@@ -20,7 +20,7 @@ function NewsItemList() {
 
   const markAsRead = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/news/${id}/read`);
+      await axios.patch(`https://hackernewsclonebackend.onrender.com/api/news/${id}/read`);
       setNewsItems(
         newsItems.map((item) =>
           item._id === id ? { ...item, read: true } : item
@@ -31,17 +31,17 @@ function NewsItemList() {
     }
   };
 
-  const markAsDeleted = async (id) => {
-    try {
-      // Remove the news item from the frontend
-      setNewsItems(newsItems.filter((item) => item._id !== id));
+  // const markAsDeleted = async (id) => {
+  //   try {
+  //     // Remove the news item from the frontend
+  //     setNewsItems(newsItems.filter((item) => item._id !== id));
 
-      // Remove the news item from the backend
-      await axios.delete(`http://localhost:5000/api/news/${id}`);
-    } catch (error) {
-      console.error("Error deleting news item:", error);
-    }
-  };
+  //     // Remove the news item from the backend
+  //     await axios.delete(`http://localhost:5000/api/news/${id}`);
+  //   } catch (error) {
+  //     console.error("Error deleting news item:", error);
+  //   }
+  // };
 
   const deleteNewsItem = (id) => {
     // Update the state to remove the news item without affecting the backend

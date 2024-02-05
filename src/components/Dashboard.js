@@ -8,7 +8,7 @@ const Dashboard = ({ token, setIsAuthenticated }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:5000/api/auth/logout");
+      await axios.post("https://hackernewsclonebackend.onrender.com/api/auth/logout");
       localStorage.removeItem("token");
       setIsAuthenticated(false);
       history.push("/"); // Redirect to the home page

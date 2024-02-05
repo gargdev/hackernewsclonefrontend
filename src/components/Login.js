@@ -19,10 +19,13 @@ const Login = ({ setIsAuthenticated }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://hackernewsclonebackend.onrender.com/api/auth/login", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        "https://hackernewsclonebackend.onrender.com/api/auth/login",
+        {
+          username,
+          password,
+        }
+      );
       if (res && res.data && res.data.token) {
         setIsAuthenticated(true);
         localStorage.setItem("token", res.data.token);
@@ -47,7 +50,7 @@ const Login = ({ setIsAuthenticated }) => {
   };
 
   return (
-    <div className="container bg-slate-300 p-10 w-2/6 flex flex-col gap-9 items-center justify-around outline outline-2 outline-offset-2 rounded-lg outline-none">
+    <div className="container bg-white-300 p-10 w-2/6 flex flex-col gap-9 items-center justify-around outline outline-2 outline-offset-2 rounded-lg outline-none">
       <h2 className="text-4xl font-extrabold mb-10">Login</h2>
       {error && <div className="error">{error}</div>}
       {success && <div className="success">{success}</div>}
