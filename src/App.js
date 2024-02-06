@@ -15,7 +15,8 @@ const App = () => {
 
   return (
     <Router>
-      <div className="App bg-slate-700">
+      <h1>HackerNews Clone</h1>
+      <div className="App">
         <Switch>
           <Route exact path="/">
             {isAuthenticated ? (
